@@ -22,7 +22,7 @@
       arm_target_loader_applicable_loaders="Flash"
       arm_target_loader_default_loader="Flash"
       arm_target_restrict_memory_accesses="Yes"
-      c_user_include_directories="$(TargetsDir)/STM32/include;$(TargetsDir)/CMSIS_3/CMSIS/Include"
+      c_user_include_directories="$(TargetsDir)/STM32/include;$(TargetsDir)/CMSIS_3/CMSIS/Include;Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/inc"
       linker_memory_map_file="$(TargetsDir)/STM32/STM32L151C6_MemoryMap.xml"
       linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml" project_directory=""
       project_type="Executable"
@@ -43,7 +43,9 @@
       target_reset_script="FLASHReset()" />
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
-      <file file_name="main.c" />
+      <file file_name="main.c">
+        <configuration Name="Common" c_user_include_directories="." />
+      </file>
     </folder>
     <folder Name="System Files">
       <file file_name="$(StudioDir)/source/thumb_crt0.s" />
