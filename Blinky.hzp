@@ -9,11 +9,11 @@
       arm_core_type="Cortex-M3"
       arm_fpu_type="None"
       arm_gcc_target="arm-unknown-eabi"
-      arm_linker_heap_size="128"
+      arm_linker_heap_size="1024"
       arm_linker_jtag_pad_pre_dr="1"
       arm_linker_jtag_pad_pre_ir="5"
       arm_linker_process_stack_size="0"
-      arm_linker_stack_size="256"
+      arm_linker_stack_size="1024"
       arm_simulator_memory_simulation_filename="$(TargetsDir)/STM32/STM32SimulatorMemory.dll"
       arm_simulator_memory_simulation_parameter="STM32L151C6;0x8000;0x2800"
       arm_target_connect_with_reset="Yes"
@@ -22,9 +22,11 @@
       arm_target_loader_applicable_loaders="Flash"
       arm_target_loader_default_loader="Flash"
       arm_target_restrict_memory_accesses="Yes"
-      c_user_include_directories="$(TargetsDir)/STM32/include;$(TargetsDir)/CMSIS_3/CMSIS/Include;Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/inc"
+      c_preprocessor_definitions="USE_STDPERIPH_DRIVER;USE_FULL_ASSERT"
+      c_user_include_directories="$(TargetsDir)/STM32/include;$(TargetsDir)/CMSIS_3/CMSIS/Include;Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/inc;."
       linker_memory_map_file="$(TargetsDir)/STM32/STM32L151C6_MemoryMap.xml"
-      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml" project_directory=""
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      project_directory=""
       project_type="Executable"
       property_groups_file_path="$(TargetsDir)/STM32/propertyGroups.xml"
       target_get_partname_script="GetPartName()"
@@ -44,8 +46,21 @@
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="main.c">
-        <configuration Name="Common" c_user_include_directories="." />
+        <configuration Name="Common" c_user_include_directories="" />
       </file>
+      <file file_name="stm32l1xx_conf.h">
+        <configuration Name="THUMB Debug" build_exclude_from_build="No" />
+      </file>
+      <file file_name="discover_board.h" />
+      <folder
+        Name="STM32L1xx_StdPeriph_Driver"
+        exclude=""
+        filter="*.*"
+        path="Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/src"
+        recurse="No" />
+      <file file_name="Vendor/STM32L1xx_StdPeriph_Lib/Libraries/CMSIS/Device/ST/STM32L1xx/Source/Templates/system_stm32l1xx.c" />
+      <file file_name="stm32l1xx_it.c" />
+      <file file_name="stm32l1xx_it.h" />
     </folder>
     <folder Name="System Files">
       <file file_name="$(StudioDir)/source/thumb_crt0.s" />
@@ -78,4 +93,5 @@
     gcc_debugging_level="Level 1"
     gcc_optimization_level="Level 1"
     hidden="Yes" />
+  <configuration Name="Common" arm_linker_stack_size="2500" />
 </solution>

@@ -1,8 +1,6 @@
-Blinky\ THUMB\ Debug/main.o: \
- /Users/williamrust/Workspace/Tests/Arm32_Blinky/main.c \
- /Applications/CrossWorks\ for\ ARM\ 3.0/include/__cross_studio_io.h \
- /Applications/CrossWorks\ for\ ARM\ 3.0/include/cross_studio_io.h \
- /Applications/CrossWorks\ for\ ARM\ 3.0/include/__crossworks.h \
+Blinky\ THUMB\ Debug/stm32l1xx_it.o: \
+ /Users/williamrust/Workspace/Tests/Arm32_Blinky/stm32l1xx_it.c \
+ /Users/williamrust/Workspace/Tests/Arm32_Blinky/stm32l1xx_it.h \
  /Users/williamrust/Workspace/Tests/Arm32_Blinky/stm32l1xx.h \
  /Users/williamrust/Library/Rowley\ Associates\ Limited/CrossWorks\ for\ ARM/v3/packages/targets/CMSIS_3/CMSIS/Include/core_cm3.h \
  /Applications/CrossWorks\ for\ ARM\ 3.0/include/stdint.h \
@@ -36,4 +34,5 @@ Blinky\ THUMB\ Debug/main.o: \
  Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_usart.h \
  Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_wwdg.h \
  Vendor/STM32L1xx_StdPeriph_Lib/Libraries/STM32L1xx_StdPeriph_Driver/inc/misc.h \
- /Users/williamrust/Workspace/Tests/Arm32_Blinky/discover_board.h
+ /Applications/CrossWorks\ for\ ARM\ 3.0/include/stdio.h \
+ /Applications/CrossWorks\ for\ ARM\ 3.0/include/__crossworks.h

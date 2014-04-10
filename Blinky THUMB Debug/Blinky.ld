@@ -37,14 +37,14 @@ SECTIONS
   __CM3_System_Control_Space_segment_start__ = 0xe000e000;
   __CM3_System_Control_Space_segment_end__ = 0xe000f000;
 
-  __STACKSIZE__ = 256;
+  __STACKSIZE__ = 1024;
   __STACKSIZE_PROCESS__ = 0;
   __STACKSIZE_IRQ__ = 0;
   __STACKSIZE_FIQ__ = 0;
   __STACKSIZE_SVC__ = 0;
   __STACKSIZE_ABT__ = 0;
   __STACKSIZE_UND__ = 0;
-  __HEAPSIZE__ = 128;
+  __HEAPSIZE__ = 1024;
   __eeprom_load_start__ = ALIGN(__EEPROM_segment_start__ , 4);
   .eeprom ALIGN(__EEPROM_segment_start__ , 4) : AT(ALIGN(__EEPROM_segment_start__ , 4))
   {
